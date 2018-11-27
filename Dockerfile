@@ -1,7 +1,7 @@
 FROM lachlanevenson/k8s-kubectl
 ENV HELM_LATEST_VERSION="v2.9.1"
 RUN apk update && apk add gettext python
-RUN apk add --update ca-certificates wget jq nodejs npm terraform \
+RUN apk add --update ca-certificates wget jq nodejs npm terraform git \
   && apk add --update -t deps \
   && wget https://storage.googleapis.com/kubernetes-helm/helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz \
   && tar -xvf helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz \
