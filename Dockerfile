@@ -1,5 +1,6 @@
 FROM lachlanevenson/k8s-kubectl
 ENV HELM_LATEST_VERSION="v2.9.1"
+RUN sed -i -e 's/v[[:digit:]]\.[[:digit:]]/edge/g' /etc/apk/repositories
 RUN apk update && apk add gettext python
 RUN apk add --update ca-certificates wget jq nodejs npm terraform git yarn \
   && apk add --update -t deps \
